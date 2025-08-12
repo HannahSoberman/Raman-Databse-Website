@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ name }} – Molecule Details</title>
+</head>
+<body>
+<h1>Edit Entry</h1>
+<form method="POST" enctype="multipart/form-data">
+    <input type="text" name="frequencies" value="{{ entry[0] }}" required>
+    <input type="text" name="intensities" value="{{ entry[1] }}">
+    <input type="text" name="phase" value="{{ entry[2] }}">
+    <input type="text" name="source" value="{{ entry[3] }}">
+    <textarea name="description">{{ entry[4] }}</textarea>
+    <p>Current image: {{ entry[5] or 'None' }}</p>
+    <input type="file" name="image">
+    <button type="submit">Save Changes</button>
+</form>
+</body>

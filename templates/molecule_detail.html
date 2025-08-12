@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ name }} – Molecule Details</title>
+</head>
+<body>
+<h1>{{ name }}</h1>
+
+{% for entry_id, freqs, intensities, phase, source, description, image_path in frequency_sets %}
+<div style="border:1px solid #ccc; padding:10px; margin-bottom:1rem;">
+    {% if phase %}<p><strong>Phase:</strong> {{ phase }}</p>{% endif %}
+    {% if source %}<p><strong>Source:</strong> {{ source }}</p>{% endif %}
+    {% if description %}
+        <p><strong>Description:</strong></p>
+        <p><em>{{ description }}</em></p>
+    {% endif %}
+    {% if image_path %}
+    <img src="{{ url_for('static', filename='uploads/' ~ image_path) }}" alt="Spectrum image"
+         style="max-width: 100%; height: auto;">
+    {% else %}
+    <p style="color: gray;">No image uploaded for this entry</p>
+    {% endif %}
+
+    <!--        {% if image_path %}-->
+    <!--        <img src="{{ url_for('static', filename='uploads/' ~ image_path) }}" alt="Spectrum image" style="max-width: 100%; height: auto;">-->
+    <!--        {% endif %}-->
+    <p><strong>Frequencies (cm⁻¹):</strong></p>
+    <a href="{{ url_for('edit_entry', entry_id=entry_id) }}">✏️ Edit this entry</a>
+    <ul>
+        {% set freq_list = freqs.split(',') %}
+        {% if intensities %}
+        {% set intensity_list = intensities.split(',') %}
+        {% for freq in freq_list %}
+        <li>
+            {{ freq.strip() }}
+            {% if loop.index0 < intensity_list|length %}
+            {% set i = intensity_list[loop.index0]|trim %}
+            {% if i %}(Intensity: {{ i }}){% endif %}
+            {% endif %}
+        </li>
+        {% endfor %}
+        {% else %}
+        {% for freq in freq_list %}
+        <li>{{ freq.strip() }}</li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+{% endfor %}
+<a href="{{ url_for('home') }}">⬅ Back</a>
+</body>
+</html>
