@@ -10,8 +10,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 DB_FILE = "molecules.db"
 
-
-def init_db():
+def init_db():                                      # creates databases to add raman data to
     with sqlite3.connect(DB_FILE) as conn:
         c = conn.cursor()
         c.execute('''
@@ -35,7 +34,7 @@ def init_db():
         ''')
 
 
-@app.route('/molecule/<int:id>')
+@app.route('/molecule/<int:id>')                                    # defines the molecule detail page's functionality
 def molecule_detail(id):
     with sqlite3.connect(DB_FILE) as conn:
         c = conn.cursor()
@@ -53,7 +52,7 @@ def molecule_detail(id):
     return render_template('molecule_detail.html', name=name, frequency_sets=frequency_sets)
 
 
-@app.route('/delete/<int:id>', methods=['POST'])
+@app.route('/delete/<int:id>', methods=['POST'])            #function to delete a molecule from the database
 def delete_molecule(id):
     with sqlite3.connect(DB_FILE) as conn:
         c = conn.cursor()
@@ -62,7 +61,7 @@ def delete_molecule(id):
 
 
 @app.route('/edit/<int:entry_id>', methods=['GET', 'POST'])
-def edit_entry(entry_id):
+def edit_entry(entry_id):                               # provides functionality for editing pre-existing entries
     with sqlite3.connect(DB_FILE) as conn:
         c = conn.cursor()
         if request.method == 'POST':
