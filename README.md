@@ -18,20 +18,21 @@ A lightweight Flask-based web application for storing, searching, and editing Ra
 - Jupyter Notebook (optional)
 
 📦 Installation
-# Clone the repo
+## Clone the repo
 git clone https://github.com/your-username/raman-db-project.git
 cd raman-db-project
 
-# (Optional) Create a virtual environment
+## (Optional) Create a virtual environment
 python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate
+or venv\Scripts\activate on Windows
 
-# Install dependencies
+## Install dependencies
 pip install -r requirements.txt
 
 
 
-🖥️ Running the Flask App
+## Running the Flask App
 python app.py
 
 
