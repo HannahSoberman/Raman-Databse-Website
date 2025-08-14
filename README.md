@@ -1,4 +1,5 @@
- Raman Frequency Database Web App
+# Raman Frequency Database Web App
+
 A lightweight Flask-based web application for storing, searching, and editing Raman spectroscopy data. Designed for collaborative scientific workflows with support for image uploads, frequency matching, and molecule metadata.
 
 🚀 Features
