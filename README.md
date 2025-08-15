@@ -19,43 +19,27 @@ A lightweight Flask-based web application for storing, searching, and editing Ra
 
 📦 Installation
 ## Clone the repo
-git clone https://github.com/your-username/raman-db-project.git
-cd raman-db-project
+in a terminal use: cd path/to/project
+then use:
+git clone https://github.com/HannahSoberman/Raman-Databse-Website.git
+
 
 ## (Optional) Create a virtual environment
+using a terminal:
+
 python -m venv venv
+
 source venv/bin/activate
 or venv\Scripts\activate on Windows
 
 ## Install dependencies
 pip install -r requirements.txt
 
-
-
 ## Running the Flask App
 python app.py
 
 
 Then visit: http://127.0.0.1:5000/ in your browser.
-
-📓 Using the Jupyter Notebook
-If you prefer working interactively:
-jupyter notebook
-
-
-Open notebook.ipynb to explore, add, or search data directly.
-
-📁 Project Structure
-raman-db-project/
-├── app.py                  # Flask app
-├── notebook.ipynb          # Jupyter version
-├── molecules.db            # SQLite database
-├── templates/              # HTML templates
-├── static/uploads/         # Uploaded images
-├── requirements.txt        # Python dependencies
-└── README.md               # You're reading it!
-
-
 
 🤝 Contributing
 Pull requests welcome! If you’d like to contribute:
@@ -65,6 +49,4 @@ Pull requests welcome! If you’d like to contribute:
 - Push and open a PR
 
 📬 Contact
-For questions or collaboration ideas, reach out via GitHub Issues or email [your-email@example.com].
-
-Let me know if you'd like me to customize this with your actual GitHub username, email, or add a Zenodo badge for citation. We can also add screenshots or a demo GIF if you want to make it pop!
+For questions or collaboration ideas, reach out via GitHub Issues or email [fbq7kr@virginia.edu].
